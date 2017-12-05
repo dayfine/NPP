@@ -1,0 +1,29 @@
+{
+  "name": "npp",
+  "version": "1.0.0",
+  "description": "npm package playground",
+  "main": "server/index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "concurrently \"npm run server\" \"npm run client\"",
+    "server": "nodemon server",
+    "client": "node start-client.js",
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/dayfine/NPP.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/dayfine/NPP/issues"
+  },
+  "homepage": "https://github.com/dayfine/NPP#readme",
+  "dependencies": {
+    "express": "^4.16.2",
+    "morgan": "^1.9.0"
+  },
+  "devDependencies": {
+    "concurrently": "^3.5.1"
+  }
+}
