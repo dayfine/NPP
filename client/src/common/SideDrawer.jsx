@@ -3,7 +3,7 @@ import PropTypes from 'prop-types'
 import { withStyles } from 'material-ui/styles'
 import Drawer from 'material-ui/Drawer'
 import Button from 'material-ui/Button'
-import List from 'material-ui/List'
+import List, { ListItem } from 'material-ui/List'
 import Divider from 'material-ui/Divider'
 
 class SideDrawer extends React.Component {
@@ -20,16 +20,25 @@ class SideDrawer extends React.Component {
 
     const sideList = (
       <div className={classes.list}>
-        <List>Something</List>
+        <List>
+          <ListItem>
+            Current List
+          </ListItem>
+        </List>
         <Divider />
-        <List>Something Else </List>
+        <List>
+          Archive List
+        </List>
       </div>
     )
 
     return (
       <div>
         <Button onClick={this.toggleDrawer(true)}>Open Drawer</Button>
-        <Drawer open={this.state.open} onRequestClose={this.toggleDrawer(false)}>
+        <Drawer
+          open={this.state.open}
+          onRequestClose={this.toggleDrawer(false)}
+        >
           <div
             tabIndex={0}
             role="button"
@@ -43,7 +52,6 @@ class SideDrawer extends React.Component {
     );
   }
 }
-
 
 const styles = {
   list: {
