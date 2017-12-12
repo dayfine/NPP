@@ -3,14 +3,16 @@ import { Route, Switch } from 'react-router-dom'
 
 import MainWrapper from './common/MainWrapper'
 import Main from './Main'
-import MarkDownEditor from './Current/MarkDownEditor'
+import CurrentList from './Current'
 
 export default (props) => {
   return (
     <MainWrapper>
       <Switch>
         <Route path='/' exact component={Main} />
-        <Route path='/markdown' component={MarkDownEditor} />
+        {CurrentList.map(_ => (
+          <Route key={_.name} path={`/${_.path}`} component={_.component} />
+        ))}
       </Switch>
     </MainWrapper>
   )

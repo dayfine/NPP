@@ -1,10 +1,14 @@
 import React from 'react'
 import PropTypes from 'prop-types'
+import { Link } from 'react-router-dom'
+
 import { withStyles } from 'material-ui/styles'
 import Drawer from 'material-ui/Drawer'
 import Button from 'material-ui/Button'
 import List, { ListItem } from 'material-ui/List'
 import Divider from 'material-ui/Divider'
+
+import CurrentList from '../Current'
 
 class SideDrawer extends React.Component {
   state = {
@@ -25,10 +29,19 @@ class SideDrawer extends React.Component {
             Current List
           </ListItem>
         </List>
-        <Divider />
         <List>
-          Archive List
+        {CurrentList.map(_=>(
+          <ListItem
+            key={_.name}
+            component={Link}
+            to={`/${_.path}`}
+          >
+            {_.name}
+          </ListItem>
+        ))}
         </List>
+        <Divider />
+        Archived
       </div>
     )
 

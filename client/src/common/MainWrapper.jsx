@@ -15,8 +15,8 @@ const styles = {
     maxWidth: 967,
     minHeight: '100%',
     height: '100%',
-    margin: '0 auto',
-    padding: '120px 24px 0 24px',
+    // margin: '0 auto',
+    // padding: '120px 24px 0 24px',
     display: 'flex',
     justifyContent: 'center',
     alignItems: 'flex-start'

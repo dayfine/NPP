@@ -7,13 +7,18 @@ import { withStyles } from 'material-ui/styles'
 import Button from 'material-ui/Button'
 import AppBar from 'material-ui/AppBar'
 import Toolbar from 'material-ui/Toolbar'
-import Typography from 'material-ui/Typography'
 
 const NavBar = ({ classes }) => {
   return (
     <AppBar className={classes.root}>
-      <Toolbar>
+      <Toolbar className={classes.flex}>
         <SideDrawer />
+        <Button
+          component={Link}
+          to='/'
+        >
+          Home
+        </Button>
       </Toolbar>
     </AppBar>
   )
@@ -22,10 +27,14 @@ const NavBar = ({ classes }) => {
 const styles = theme => ({
   root: {
     width: '100%',
-    background: 'rgba(72, 72, 72, .05)',
+    background: 'rgba(72, 72, 72, 0)',
+    border: '1px solid rgba(72, 72, 72, 0.1)',
+    boxShadow: 'none'
+  },
+  flex: {
     display: 'flex',
     justifyContent: 'space-between',
-    alignItem: 'center'
+    alignItems: 'center'
   }
 })
 
