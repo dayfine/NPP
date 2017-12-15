@@ -3,12 +3,13 @@ import { Controlled as CodeMirror } from 'react-codemirror2'
 
 import { withStyles } from 'material-ui/styles'
 
-require('./index.css')
-require('codemirror')
-require('codemirror/lib/codemirror.css')
-require('codemirror/mode/xml/xml')
-require('codemirror/mode/javascript/javascript')
-require('codemirror/theme/monokai.css')
+// CodeMirror Dependencies
+import './index.css'
+import 'codemirror'
+import 'codemirror/lib/codemirror.css'
+import 'codemirror/mode/xml/xml'
+import 'codemirror/mode/javascript/javascript'
+import 'codemirror/theme/monokai.css'
 
 class Editor extends React.Component {
   state = {
@@ -23,7 +24,7 @@ class Editor extends React.Component {
   render() {
     const { classes } = this.props
     return (
-      <div className={classes.root}>
+      <div className='editor-pane'>
         <CodeMirror
           value={this.state.value}
           options={{
@@ -32,6 +33,7 @@ class Editor extends React.Component {
             lineNumbers: false
           }}
           onBeforeChange={this.onBeforeChange}
+          className='CodeMirror'
         />
       </div>
     )
